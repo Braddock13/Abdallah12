@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradingPro - Formation Trading Professionnel | Abdallah Kabore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #f39c12;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #2ecc71;
+            --warning: #f1c40f;
+            --danger: #e74c3c;
+            --trading-bg: #0a1e3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #0d2a52;
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background: #219653;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Header */
+        header {
+            background: var(--primary);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2c5282 100%);
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iIzFhM2E2YyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.2;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Levels Section - MODIFIÉ */
+        .levels {
+            background: var(--trading-bg);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .levels::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(10, 30, 60, 0.8), rgba(10, 30, 60, 0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M0,80 C40,40 80,90 120,30 C160,70 200,20 200,20 L200,100 L0,100 Z" fill="%231a3a6c" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.5;
+        }
+        
+        .levels .section-title h2 {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .levels .section-title h2:after {
+            background: var(--secondary);
+        }
+        
+        .levels-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px 0;
+            position: relative;
+            z-index: 2;
+            overflow-x: auto;
+        }
+        
+        .level-card {
+            flex: 0 0 auto;
+            width: 320px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .level-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .level-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .level-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+        
+        .beginner .level-header {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+        }
+        
+        .intermediate .level-header {
+            background: linear-gradient(135deg, #9b59b6 0%, #34495e 100%);
+        }
+        
+        .advanced .level-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .level-body {
+            padding: 30px;
+        }
+        
+        .level-body ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .level-body ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .level-body ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .level-body ul li i {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .level-price {
+            text-align: center;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin: 25px 0;
+            color: white;
+        }
+        
+        .level-price span {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .level-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--secondary);
+            color: white;
+            padding: 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .level-btn:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+        
+        /* Business Plan Section */
+        .business-plan {
+            background-color: white;
+        }
+        
+        .plan-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan-step {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .plan-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .plan-step i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .plan-step h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .plan-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        /* Career Section */
+        .career {
+            background: linear-gradient(135deg, #2c5282 0%, #1a3a6c 100%);
+            color: white;
+        }
+        
+        .career .section-title h2 {
+            color: white;
+        }
+        
+        .career .section-title h2:after {
+            background: var(--secondary);
+        }
+        
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .career-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .career-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .career-card i {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .career-card h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(to right, var(--primary), #2c5282);
+            color: white;
+        }
+        
+        .testimonials .section-title h2 {
+            color: white;
+        }
+        
+        .testimonials .section-title h2:after {
+            background: var(--secondary);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        /* Payment Section */
+        .payment {
+            background-color: white;
+            text-align: center;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-method {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .payment-method.orange {
+            border-top: 4px solid #ff6600;
+        }
+        
+        .payment-method i {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #ff6600;
+        }
+        
+        .payment-method h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Contact */
+        .contact {
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 24px;
+            min-width: 40px;
+        }
+        
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                max-height: 500px;
+                padding: 20px 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .levels-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .level-card {
+                width: 100%;
+                max-width: 400px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-chart-line"></i>
+                TradingPro
+            </a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#formation">Formations</a></li>
+                    <li><a href="#business">Business Plan</a></li>
+                    <li><a href="#carriere">Carrière</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container hero-content">
+            <h1>Formation Trading Professionnel</h1>
+            <p>Apprenez à trader comme un professionnel avec nos formations complètes pour débutants, intermédiaires et experts. Aucun investissement requis pour commencer votre apprentissage.</p>
+            <div class="hero-buttons">
+                <a href="#formation" class="btn">Découvrir les formations</a>
+                <a href="#contact" class="btn btn-primary">Contactez-nous</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="apropos">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>À propos de notre formation</h2>
+                    <p>Fondé par Abdallah Kabore, TradingPro est un centre d'excellence pour la formation au trading en ligne. Notre mission est de rendre le trading accessible à tous, sans nécessité d'investissement initial.</p>
+                    <p>Notre approche pédagogique unique combine théorie et pratique pour vous permettre de maîtriser les marchés financiers à votre rythme. Que vous soyez débutant complet ou trader expérimenté, nos formations sont adaptées à votre niveau.</p>
+                    <p>Nos instructeurs sont des professionnels du marché avec plus de 10 ans d'expérience dans les salles de marchés internationales. Ils vous transmettront les stratégies gagnantes et les bonnes pratiques pour réussir dans le trading.</p>
+                    <a href="#formation" class="btn btn-accent">Voir nos programmes</a>
+                </div>
+                <div class="about-image">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3e%3crect width='600' height='400' fill='%231a3a6c'/%3e%3ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23ffffff'%3eFormation Trading Professionnel%3c/text%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%23f39c12'%3eAbdallah Kabore - Expert en marchés financiers%3c/text%3e%3c/svg%3e" alt="Formation Trading">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Levels Section - MODIFIÉE -->
+    <section class="section levels" id="formation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Formations Premium</h2>
+                <p>Programmes adaptés à tous les niveaux d'expertise</p>
+            </div>
+            
+            <div class="levels-container">
+                <!-- Débutant -->
+                <div class="level-card beginner">
+                    <div class="level-header">
+                        <h3>Débutant</h3>
+                        <p>Les bases du trading</p>
+                    </div>
+                    <div class="level-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Comprendre les marchés financiers</li>
+                            <li><i class="fas fa-check-circle"></i> Terminologie et concepts fondamentaux</li>
+                            <li><i class="fas fa-check-circle"></i> Introduction à l'analyse technique</li>
+                            <li><i class="fas fa-check-circle"></i> Gestion du risque pour débutants</li>
+                            <li><i class="fas fa-check-circle"></i> Utilisation des plateformes de trading</li>
+                            <li><i class="fas fa-check-circle"></i> 5 stratégies simples pour commencer</li>
+                        </ul>
+                        <div class="level-price">25,000 FCFA <span>par mois</span></div>
+                        <a href="#contact" class="level-btn">S'inscrire maintenant</a>
+                    </div>
+                </div>
+                
+                <!-- Intermédiaire -->
+                <div class="level-card intermediate">
+                    <div class="level-header">
+                        <h3>Intermédiaire</h3>
+                        <p>Perfectionnez vos compétences</p>
+                    </div>
+                    <div class="level-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Analyse technique avancée</li>
+                            <li><i class="fas fa-check-circle"></i> Introduction à l'analyse fondamentale</li>
+                            <li><i class="fas fa-check-circle"></i> Stratégies de swing trading</li>
+                            <li><i class="fas fa-check-circle"></i> Psychologie du trader</li>
+                            <li><i class="fas fa-check-circle"></i> Gestion de portefeuille</li>
+                            <li><i class="fas fa-check-circle"></i> Trading automatisé (basics)</li>
+                        </ul>
+                        <div class="level-price">45,000 FCFA <span>par mois</span></div>
+                        <a href="#contact" class="level-btn">S'inscrire maintenant</a>
+                    </div>
+                </div>
+                
+                <!-- Pro -->
+                <div class="level-card advanced">
+                    <div class="level-header">
+                        <h3>Professionnel</h3>
+                        <p>Devenez un expert</p>
+                    </div>
+                    <div class="level-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Trading algorithmique</li>
+                            <li><i class="fas fa-check-circle"></i> Analyse fondamentale approfondie</li>
+                            <li><i class="fas fa-check-circle"></i> Stratégies de trading haute fréquence</li>
+                            <li><i class="fas fa-check-circle"></i> Gestion de risque professionnelle</li>
+                            <li><i class="fas fa-check-circle"></i> Trading sur options et dérivés</li>
+                            <li><i class="fas fa-check-circle"></i> Mentorat personnalisé</li>
+                        </ul>
+                        <div class="level-price">75,000 FCFA <span>par mois</span></div>
+                        <a href="#contact" class="level-btn">S'inscrire maintenant</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Plan Section -->
+    <section class="section business-plan" id="business">
+        <div class="container">
+            <div class="section-title">
+                <h2>Guide Business Plan pour Traders</h2>
+                <p>Élaborez votre plan d'affaires solide pour réussir dans le trading</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Que vous soyez novice ou que vous stagniez après avoir débuté, notre guide complet pour élaborer votre business plan est la solution. Ce programme vous fournit les outils nécessaires pour structurer votre activité de trading comme une véritable entreprise.</p>
+                    <p>Notre méthode éprouvée vous guide à travers chaque étape cruciale : de la définition de votre stratégie à la gestion de votre trésorerie, en passant par la gestion des risques et la planification de votre croissance.</p>
+                </div>
+                <div class="about-image">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3e%3crect width='600' height='400' fill='%2327ae60'/%3e%3ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23ffffff'%3eBusiness Plan pour Traders%3c/text%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%23f39c12'%3eStructurer votre activité comme une entreprise%3c/text%3e%3c/svg%3e" alt="Business Plan Trading">
+                </div>
+            </div>
+            
+            <div class="plan-steps">
+                <div class="plan-step">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Définir vos objectifs</h3>
+                    <p>Établissez des objectifs clairs, mesurables et réalisables pour votre activité de trading</p>
+                </div>
+                <div class="plan-step">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analyser le marché</h3>
+                    <p>Comprenez les tendances du marché et identifiez vos opportunités de trading</p>
+                </div>
+                <div class="plan-step">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Gestion des risques</h3>
+                    <p>Développez une stratégie solide de gestion des risques pour protéger votre capital</p>
+                </div>
+                <div class="plan-step">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Plan financier</h3>
+                    <p>Créez un plan financier détaillé avec projections de revenus et gestion de trésorerie</p>
+                </div>
+            </div>
+            
+            <div class="plan-cta">
+                <h3>Prêt à transformer votre trading en véritable entreprise?</h3>
+                <p>Accédez à notre guide complet avec modèles, études de cas et accompagnement personnalisé</p>
+                <a href="#contact" class="btn btn-accent">Télécharger le guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section class="section career" id="carriere">
+        <div class="container">
+            <div class="section-title">
+                <h2>Boostez Votre Carrière en Trading</h2>
+                <p>Programme spécial pour débutants et intermédiaires</p>
+            </div>
+            
+            <div class="career-grid">
+                <div class="career-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Accélération Débutant</h3>
+                    <p>Pour les nouveaux traders qui veulent éviter les erreurs coûteuses et progresser rapidement avec une méthode structurée.</p>
+                    <ul>
+                        <li>Fondamentaux du trading accéléré</li>
+                        <li>Stratégies de démarrage efficaces</li>
+                        <li>Éviter les pièges des débutants</li>
+                        <li>Mentorat individuel</li>
+                    </ul>
+                </div>
+                <div class="career-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Percez le Plafond</h3>
+                    <p>Pour les traders intermédiaires qui stagnent et veulent passer au niveau supérieur de performance.</p>
+                    <ul>
+                        <li>Diagnostic de vos blocages</li>
+                        <li>Stratégies avancées de rupture</li>
+                        <li>Optimisation de la psychologie</li>
+                        <li>Techniques de trading professionnelles</li>
+                    </ul>
+                </div>
+                <div class="career-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Diversification Expert</h3>
+                    <p>Pour les traders confirmés qui souhaitent diversifier leurs stratégies et sources de revenus.</p>
+                    <ul>
+                        <li>Marchés alternatifs</li>
+                        <li>Stratégies multi-temporelles</li>
+                        <li>Gestion de portefeuille avancée</li>
+                        <li>Création de revenus passifs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#contact" class="btn">Démarrer mon programme carrière</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" id="temoignages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Témoignages</h2>
+                <p>Ce que disent nos élèves</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"La formation débutant a transformé ma compréhension des marchés. En trois mois, je suis passé de néophyte à trader autonome. Merci Abdallah!"</p>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3ccircle cx='25' cy='25' r='25' fill='%233498db'/%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%23ffffff'%3eAK%3c/text%3e%3c/svg%3e" alt="Aminata K.">
+                        <div>
+                            <h4>Aminata K.</h4>
+                            <p>Étudiante - Niveau Débutant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Le programme intermédiaire m'a permis d'affiner mes stratégies et de doubler ma rentabilité. Les conseils personnalisés font toute la différence."</p>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3ccircle cx='25' cy='25' r='25' fill='%239b59b6'/%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%23ffffff'%3eSO%3c/text%3e%3c/svg%3e" alt="Souleymane O.">
+                        <div>
+                            <h4>Souleymane O.</h4>
+                            <p>Comptable - Niveau Intermédiaire</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"La formation pro est exceptionnelle. Abdallah partage son expérience des salles de marché avec générosité. Un investissement qui se rentabilise rapidement."</p>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3ccircle cx='25' cy='25' r='25' fill='%23e74c3c'/%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%23ffffff'%3eFD%3c/text%3e%3c/svg%3e" alt="Fatimata D.">
+                        <div>
+                            <h4>Fatimata D.</h4>
+                            <p>Ingénieur - Niveau Professionnel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="section payment">
+        <div class="container">
+            <div class="section-title">
+                <h2>Modes de Paiement</h2>
+                <p>Paiements sécurisés et faciles avec Orange Money</p>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method orange">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Orange Money</h3>
+                    <p>Paiement mobile rapide et sécurisé</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; background: #f8f9fa; padding: 25px; border-radius: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3>Comment payer avec Orange Money</h3>
+                <ol style="text-align: left; max-width: 600px; margin: 20px auto;">
+                    <li>Choisissez votre formation ou programme</li>
+                    <li>Contactez-nous pour obtenir le numéro de paiement</li>
+                    <li>Effectuez le transfert via l'application Orange Money</li>
+                    <li>Envoyez la confirmation de paiement à abdallahkabore82@gmail.com</li>
+                    <li>Recevez immédiatement vos accès à la formation</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-nous</h2>
+                <p>Nous sommes à votre disposition pour toute information</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Ouagadougou, Burkina Faso</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>56 45 05 39</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>abdallahkabore82@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Lundi-Vendredi: 8h-18h<br>Samedi: 9h-13h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="program">Programme d'intérêt</label>
+                            <select id="program" required>
+                                <option value="">Sélectionnez un programme</option>
+                                <option value="debutant">Formation Débutant</option>
+                                <option value="intermediaire">Formation Intermédiaire</option>
+                                <option value="pro">Formation Professionnel</option>
+                                <option value="business">Guide Business Plan</option>
+                                <option value="carriere">Programme Carrière Trading</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>TradingPro</h3>
+                    <p>Centre d'excellence en formation au trading. Nous formons les traders de demain avec une approche professionnelle et accessible.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#formation">Formations</a></li>
+                        <li><a href="#business">Business Plan</a></li>
+                        <li><a href="#carriere">Carrière Trading</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Nos formations</h3>
+                    <ul>
+                        <li><a href="#">Niveau Débutant</a></li>
+                        <li><a href="#">Niveau Intermédiaire</a></li>
+                        <li><a href="#">Niveau Professionnel</a></li>
+                        <li><a href="#">Guide Business Plan</a></li>
+                        <li><a href="#">Programme Carrière</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Inscrivez-vous pour recevoir nos conseils et actualités trading.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                        </div>
+                        <button type="submit" class="btn">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 TradingPro - Abdallah Kabore. Tous droits réservés.</p>
+                <p>Ouagadougou, Burkina Faso</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('nav');
+        
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                nav.classList.remove('active');
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const program = document.getElementById('program').value;
+                const message = document.getElementById('message').value;
+                
+                // Get program name
+                const programNames = {
+                    'debutant': 'Formation Débutant',
+                    'intermediaire': 'Formation Intermédiaire',
+                    'pro': 'Formation Professionnel',
+                    'business': 'Guide Business Plan',
+                    'carriere': 'Programme Carrière Trading'
+                };
+                const programName = programNames[program] || 'un programme';
+                
+                // In a real application, you would send this data to a server
+                // For this demo, we'll just show an alert
+                alert(`Merci ${name} ! Votre demande d'information sur ${programName} a été envoyée. Nous vous répondrons à ${email} très rapidement.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+        
+        // Add active class to nav links when scrolling
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
